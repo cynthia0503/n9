@@ -1,0 +1,602 @@
+/* ========== Base ========== */
+body {
+  background-color: #f1f1f1;
+  margin: 0;
+}
+
+#wrap {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 850px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+#wrap img {
+  vertical-align: bottom;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  /* text-decoration: none;  */
+  color: inherit;       
+}
+
+/* ========== Animation ========== */
+.fade-up,
+.fade-down,
+.fadein-blur {
+  opacity: 0;
+}
+
+.fadein-up-active {
+  animation: fadeUPAnime 1s forwards;
+}
+
+@keyframes fadeUPAnime {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadein-down-active {
+  animation: fadeDownAnime 0.8s forwards;
+}
+
+@keyframes fadeDownAnime {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(20%);
+  }
+}
+
+.fadein-blur-active {
+  animation: blur 0.8s forwards;
+}
+
+@keyframes blur {
+  from {
+    filter: blur(20px);
+    opacity: 0;
+  }
+
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+
+/* ========== Sections-FV ========== */
+.fv {
+  position: relative;
+}
+
+.fv .flare-01,
+.fv .flare-02,
+.fv .flare-03 {
+  position: absolute;
+  mix-blend-mode: screen;
+}
+
+.fv .flare-01 {
+  width: 90%;
+  left: -8%;
+  bottom: 83%;
+  overflow: hidden;
+  mix-blend-mode: screen;
+  animation: flare-move-right 3.5s linear infinite;
+}
+
+@keyframes flare-move-right {
+  0% {
+    left: -12%;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 40%;
+    opacity: 0;
+  }
+}
+
+.fv .flare-02 {
+  width: 90%;
+  right: -15%;
+  bottom: 71%;
+  overflow: hidden;
+  mix-blend-mode: screen;
+  animation: flare-move-left 3.5s linear infinite;
+}
+
+
+@keyframes flare-move-left {
+  0% {
+    right: -15%;
+    opacity: 0;
+    /* 透明でスタート */
+  }
+
+  20% {
+    opacity: 1;
+    /* すぐ見えるようにする */
+  }
+
+  80% {
+    opacity: 1;
+    /* 移動中は表示 */
+  }
+
+  100% {
+    right: 35%;
+    /* 右端位置 */
+    opacity: 0;
+    /* フェードアウト */
+  }
+}
+
+.fv .flare-03 {
+  width: 30%;
+  left: 37.8%;
+  bottom: 27.7%;
+  mix-blend-mode: screen;
+  animation: flare-scale 3s ease-in-out infinite;
+  transform-origin: center center;
+  /* 中心を基準に拡大縮小 */
+}
+
+
+@keyframes flare-scale {
+  0% {
+    transform: scale(.8);
+    /* 通常サイズ */
+  }
+
+  50% {
+    transform: scale(1.3);
+    /* 拡大 */
+  }
+
+  100% {
+    transform: scale(.8);
+    /* 元に戻る */
+  }
+}
+
+/* ========== privilege-1 ========== */
+.privilege-1-txt,
+.cta {
+  position: relative;
+}
+
+.txt1,
+.txt2,
+.cta-btn {
+  position: absolute;
+}
+
+
+.privilege-1-txt .txt1 {
+  width: 69%;
+  left: 3%;
+  bottom: 28%;
+
+}
+
+.privilege-1-txt .txt2 {
+  width: 68.5%;
+  right: 5%;
+  bottom: 52%;
+}
+
+.privilege-1-txt .cta-btn {
+  width: 91%;
+  left: 5%;
+  bottom: 8%;
+  animation: flare-scale-btn 2s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes flare-scale-btn {
+  0% {
+    transform: scale(.9);
+    /* 通常サイズ */
+  }
+
+  50% {
+    transform: scale(1);
+    /* 拡大 */
+  }
+
+  100% {
+    transform: scale(.9);
+    /* 元に戻る */
+  }
+}
+
+
+/* ========== privilege-2 ========== */
+.privilege-2a,
+.privilege-2-txt {
+  position: relative;
+}
+
+.privilege-2 .flare-01 {
+  position: absolute;
+  width: 30%;
+  left: 38.2%;
+  bottom: 32%;
+  mix-blend-mode: screen;
+  animation: flare-scale 3s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.privilege-2-txt .txt1 {
+  bottom: 30%;
+  width: 69%;
+  left: 3%;
+}
+
+.privilege-2-txt .txt2 {
+  bottom: 50%;
+  width: 68.5%;
+  right: 5%;
+}
+
+.privilege-2-txt .cta-btn {
+  width: 91%;
+  left: 5%;
+  bottom: 8%;
+  animation: flare-scale-btn 2s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+/* ========== voices ========== */
+.voices {
+  position: relative;
+}
+
+
+.img-1,
+.img-2,
+.img-3 {
+  position: absolute;
+}
+
+.voices .img-1,
+.voices .img-2,
+.voices .img-3 {
+  width: 96%;
+  left: 2%;
+}
+
+
+.voices .img-1 {
+  bottom: 55%;
+}
+
+.voices .img-1 {
+  bottom: 55%;
+}
+
+.voices .img-2 {
+  bottom: 30%;
+}
+
+.voices .img-3 {
+  bottom: 4%;
+}
+
+/* ========== choice ========== */
+.choice-1,
+.choice-2,
+.choice-3 {
+  position: relative;
+}
+
+.choice-txt {
+  position: absolute;
+  width: 31.8%;
+  right: 15%;
+}
+
+.choice-1 .choice-txt {
+  bottom: 25%;
+}
+
+.choice-1 .flare-01 {
+  position: absolute;
+  width: 15%;
+  bottom: 18.1%;
+  right: 7.8%;
+  mix-blend-mode: screen;
+  animation: flare-scale 3s ease-in-out infinite;
+}
+
+.choice-2 .choice-txt {
+  bottom: 21%;
+}
+
+.choice-2 .flare-01 {
+  position: absolute;
+  width: 15%;
+  bottom: 14.7%;
+  right: 3.3%;
+  mix-blend-mode: screen;
+  animation: flare-scale 3s ease-in-out infinite;
+}
+
+
+.choice-3 .choice-txt {
+  bottom: 29.5%;
+}
+
+.choice-3 .flare-01 {
+  position: absolute;
+  width: 15%;
+  bottom: 6%;
+  right: 28.3%;
+  mix-blend-mode: screen;
+  animation: flare-scale 3s ease-in-out infinite;
+}
+
+
+/* ========== offer ========== */
+.offer-1 {
+  position: relative;
+}
+
+.offer-1 .flare-01 {
+  position: absolute;
+  width: 30%;
+  left: 43.9%;
+  bottom: 31%;
+  mix-blend-mode: screen;
+  /* transform-origin: center center; */
+  animation: flare-blink-scale 3s ease-in-out infinite;
+}
+
+@keyframes flare-blink-scale {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.offer-slider {
+  position: relative;
+}
+
+.offer-slider .swiper {
+  position: absolute;
+  width: 98%;
+  text-align: center;
+  bottom: 3%;
+  left: 1%;
+}
+
+.swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-slide img {
+  width: 90%;
+  height: auto;
+  padding: 0 1%;
+}
+
+.swiper-l .swiper-slide {
+  width: 100%;
+  transition-timing-function: linear !important;
+}
+
+.swiper-inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper .swiper-button-next {
+  color: transparent;
+  background-image: url('/assets/images/button-next.webp');
+  background-size: contain;
+  /* 画像サイズをボタンに合わせる */
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 10%;
+  right: -2%;
+  height: 5rem;
+}
+
+.swiper .swiper-button-prev {
+  color: transparent;
+  background-image: url('/assets/images/button-prev.webp');
+  background-size: contain;
+  /* 画像サイズをボタンに合わせる */
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 10%;
+  left: -2%;
+  height: 5rem;
+}
+
+.swiper-pagination {
+  display: none !important;
+}
+
+
+/* ========== voice2 ========== */
+.voice2 {
+  position: relative;
+}
+
+.img-1,
+.img-2,
+.img-3 {
+  position: absolute;
+  width: 93.7%;
+  left: 3.2%;
+}
+
+.voice2 .img-1 {
+  bottom: 65.5%;
+}
+
+.voice2 .img-2 {
+  bottom: 34%;
+}
+
+.voice2 .img-3 {
+  bottom: 3%;
+}
+
+/* ========== flow ========== */
+.flow-arrow {
+  position: relative;
+}
+
+.flow-arrow .img1,
+.flow-arrow .img2 {
+  position: absolute;
+  width: 8%;
+  left: 46%;
+}
+
+
+.flow-arrow .img1 {
+  bottom: 98.2%;
+}
+
+.flow-arrow .img2 {
+  bottom: 78.5%;
+}
+
+.flow-arrow .img3 {
+  position: absolute;
+  bottom: 64.5%;
+  width: 10%;
+  left: 45%;
+}
+
+.flow-arrow .img4 {
+  position: absolute;
+  bottom: 48.2%;
+  left: 45%;
+}
+
+.flow-arrow .img5 {
+   position: absolute;
+  bottom: 34.3%;
+    left: 45%;
+}
+
+
+
+
+
+.floating-btn {
+  position: fixed;
+  bottom: 0;
+  margin: 0 auto;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 850px;
+  /* background-color: rgba(245, 215, 0, 0.7); */
+}
+
+.floating-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.floating-btn img {
+  width: 100%;
+  /* max-width: 850px; */
+  height: auto;
+  display: block;
+}
+
+.floating-btn.hide {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+footer {
+    text-align: center;
+    background-color: #03103d;
+    padding: 1em 0;
+    line-height: 1.65em;
+    color: #cfe1ff;
+    text-align: center;
+    margin: 0 auto;
+     font-size: 3vw;
+}
+
+figure img {
+  width: 8%;
+}
+
+@media screen and (min-width: 850px) {
+
+  .swiper .swiper-button-next {
+    height: 10rem;
+  }
+
+  .swiper .swiper-button-prev {
+    height: 10rem;
+  }
+
+  footer {
+       font-size: 15px;
+        /* padding-bottom: 30vw; */
+    }
+
+    figure img {
+  width: 5%;
+}
+}
+

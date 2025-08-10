@@ -1,4 +1,5 @@
 /* ===== Base ===== */
+/* ========== Base ========== */
 body {
   background-color: #f1f1f1;
   margin: 0;
@@ -24,11 +25,11 @@ img {
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  /* text-decoration: none;  */
+  color: inherit;       
 }
 
-/* ===== Animation ===== */
+/* ========== Animation ========== */
 .fade-up,
 .fade-down,
 .fadein-blur {
@@ -44,6 +45,7 @@ a {
     opacity: 0;
     transform: translateY(20%);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -59,6 +61,7 @@ a {
     opacity: 0;
     transform: translateY(0);
   }
+
   100% {
     opacity: 1;
     transform: translateY(20%);
@@ -74,13 +77,15 @@ a {
     filter: blur(20px);
     opacity: 0;
   }
+
   to {
     filter: blur(0);
     opacity: 1;
   }
 }
 
-/* ===== Sections-FV ===== */
+
+/* ========== Sections-FV ========== */
 .fv {
   position: relative;
 }
@@ -97,6 +102,7 @@ a {
   left: -8%;
   bottom: 83%;
   overflow: hidden;
+  mix-blend-mode: screen;
   animation: flare-move-right 3.5s linear infinite;
 }
 
@@ -105,12 +111,15 @@ a {
     left: -12%;
     opacity: 0;
   }
+
   20% {
     opacity: 1;
   }
+
   80% {
     opacity: 1;
   }
+
   100% {
     left: 40%;
     opacity: 0;
@@ -122,23 +131,33 @@ a {
   right: -15%;
   bottom: 71%;
   overflow: hidden;
+  mix-blend-mode: screen;
   animation: flare-move-left 3.5s linear infinite;
 }
+
 
 @keyframes flare-move-left {
   0% {
     right: -15%;
     opacity: 0;
+    /* 透明でスタート */
   }
+
   20% {
     opacity: 1;
+    /* すぐ見えるようにする */
   }
+
   80% {
     opacity: 1;
+    /* 移動中は表示 */
   }
+
   100% {
     right: 35%;
+    /* 右端位置 */
     opacity: 0;
+    /* フェードアウト */
   }
 }
 
@@ -146,23 +165,31 @@ a {
   width: 30%;
   left: 37.8%;
   bottom: 27.7%;
+  mix-blend-mode: screen;
   animation: flare-scale 3s ease-in-out infinite;
   transform-origin: center center;
+  /* 中心を基準に拡大縮小 */
 }
+
 
 @keyframes flare-scale {
   0% {
     transform: scale(.8);
+    /* 通常サイズ */
   }
+
   50% {
     transform: scale(1.3);
+    /* 拡大 */
   }
+
   100% {
     transform: scale(.8);
+    /* 元に戻る */
   }
 }
 
-/* ===== privilege-1 ===== */
+/* ========== privilege-1 ========== */
 .privilege-1-txt,
 .cta {
   position: relative;
@@ -174,10 +201,12 @@ a {
   position: absolute;
 }
 
+
 .privilege-1-txt .txt1 {
   width: 69%;
   left: 3%;
   bottom: 28%;
+
 }
 
 .privilege-1-txt .txt2 {
@@ -197,16 +226,22 @@ a {
 @keyframes flare-scale-btn {
   0% {
     transform: scale(.9);
+    /* 通常サイズ */
   }
+
   50% {
     transform: scale(1);
+    /* 拡大 */
   }
+
   100% {
     transform: scale(.9);
+    /* 元に戻る */
   }
 }
 
-/* ===== privilege-2 ===== */
+
+/* ========== privilege-2 ========== */
 .privilege-2,
 .privilege-2-txt {
   position: relative;
@@ -242,10 +277,11 @@ a {
   transform-origin: center center;
 }
 
-/* ===== voices ===== */
+/* ========== voices ========== */
 .voices {
   position: relative;
 }
+
 
 .img-1,
 .img-2,
@@ -260,6 +296,11 @@ a {
   left: 2%;
 }
 
+
+.voices .img-1 {
+  bottom: 55%;
+}
+
 .voices .img-1 {
   bottom: 55%;
 }
@@ -272,7 +313,7 @@ a {
   bottom: 4%;
 }
 
-/* ===== choice ===== */
+/* ========== choice ========== */
 .choice-1,
 .choice-2,
 .choice-3 {
@@ -311,6 +352,7 @@ a {
   animation: flare-scale 3s ease-in-out infinite;
 }
 
+
 .choice-3 .choice-txt {
   bottom: 29.5%;
 }
@@ -324,7 +366,8 @@ a {
   animation: flare-scale 3s ease-in-out infinite;
 }
 
-/* ===== offer ===== */
+
+/* ========== offer ========== */
 .offer-1 {
   position: relative;
 }
@@ -335,6 +378,7 @@ a {
   left: 43.9%;
   bottom: 31%;
   mix-blend-mode: screen;
+  /* transform-origin: center center; */
   animation: flare-blink-scale 3s ease-in-out infinite;
 }
 
@@ -342,13 +386,16 @@ a {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
 }
+
 
 .offer-slider {
   position: relative;
@@ -392,6 +439,7 @@ a {
   color: transparent;
   background-image: url('/assets/images/button-next.webp');
   background-size: contain;
+  /* 画像サイズをボタンに合わせる */
   background-repeat: no-repeat;
   background-position: center;
   width: 10%;
@@ -403,6 +451,7 @@ a {
   color: transparent;
   background-image: url('/assets/images/button-prev.webp');
   background-size: contain;
+  /* 画像サイズをボタンに合わせる */
   background-repeat: no-repeat;
   background-position: center;
   width: 10%;
@@ -414,14 +463,15 @@ a {
   display: none !important;
 }
 
-/* ===== voice2 ===== */
+
+/* ========== voice2 ========== */
 .voice2 {
   position: relative;
 }
 
-.voice2 .img-1,
-.voice2 .img-2,
-.voice2 .img-3 {
+.img-1,
+.img-2,
+.img-3 {
   position: absolute;
   width: 93.7%;
   left: 3.2%;
@@ -439,7 +489,7 @@ a {
   bottom: 3%;
 }
 
-/* ===== flow ===== */
+/* ========== flow ========== */
 .flow-arrow {
   position: relative;
 }
@@ -450,6 +500,7 @@ a {
   width: 8%;
   left: 46%;
 }
+
 
 .flow-arrow .img1 {
   bottom: 98.2%;
@@ -473,12 +524,15 @@ a {
 }
 
 .flow-arrow .img5 {
-  position: absolute;
+   position: absolute;
   bottom: 34.3%;
-  left: 45%;
+    left: 45%;
 }
 
-/* ===== Floating Button ===== */
+
+
+
+
 .floating-btn {
   position: fixed;
   bottom: 0;
@@ -491,6 +545,7 @@ a {
   justify-content: center;
   width: 100%;
   max-width: 850px;
+  /* background-color: rgba(245, 215, 0, 0.7); */
 }
 
 .floating-btn.visible {
@@ -501,6 +556,7 @@ a {
 
 .floating-btn img {
   width: 100%;
+  /* max-width: 850px; */
   height: auto;
   display: block;
 }
@@ -510,33 +566,39 @@ a {
   visibility: hidden !important;
 }
 
-/* ===== Footer ===== */
 footer {
-  text-align: center;
-  background-color: #03103d;
-  padding: 1em 0;
-  line-height: 1.65em;
-  color: #cfe1ff;
-  margin: 0 auto;
-  font-size: 3vw;
+    text-align: center;
+    background-color: #03103d;
+    padding: 1em 0;
+    line-height: 1.65em;
+    color: #cfe1ff;
+    text-align: center;
+    margin: 0 auto;
+     font-size: 3vw;
 }
 
 figure img {
   width: 8%;
 }
 
-/* ===== Media Queries ===== */
 @media screen and (min-width: 850px) {
+
   .swiper .swiper-button-next {
     height: 10rem;
   }
+
   .swiper .swiper-button-prev {
     height: 10rem;
   }
+
   footer {
-    font-size: 15px;
-  }
-  figure img {
-    width: 5%;
-  }
+       font-size: 15px;
+        /* padding-bottom: 30vw; */
+    }
+
+    figure img {
+  width: 5%;
 }
+}
+
+
